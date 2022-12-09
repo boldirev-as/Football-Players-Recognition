@@ -16,9 +16,10 @@ import fastwer
 app = Flask(__name__)
 api = Api(app)
 
-net = cv2.dnn.readNet("frozen_east_text_detection.pb")
-blank = cv2.imread('blank.png')
-blank = cv2.resize(blank, (25, 50), interpolation=cv2.INTER_AREA)
+
+# net = cv2.dnn.readNet("frozen_east_text_detection.pb")
+# blank = cv2.imread('blank.png')
+# blank = cv2.resize(blank, (25, 50), interpolation=cv2.INTER_AREA)
 
 
 def my_dist(a, b):
@@ -40,7 +41,7 @@ def my_dist(a, b):
     return current_row[n]
 
 
-pytesseract.pytesseract.tesseract_cmd = 'C:\\Users\\vush6\\AppData\\Local\\Programs\\Tesseract-OCR\\tesseract.exe'
+# pytesseract.pytesseract.tesseract_cmd = 'C:\\Users\\vush6\\AppData\\Local\\Programs\\Tesseract-OCR\\tesseract.exe'
 
 
 def crop_img_by_polygon(img, polygon):
@@ -241,14 +242,15 @@ def choose_the_most_suitable_candidates(candidates, surnames):
         min_cer = 1000
         best_surname = ""
         for surname in surnames:
-            if len(surname) == 0:
-                continue
-            cer = fastwer.score_sent(prob_surname.lower(), surname.lower().split()[-1], char_level=True)
-            if cer < min_cer:
-                min_cer = cer
-                best_surname = surname
-            if cer == 0:
-                break
+            for part in surname.split():
+                if len(part) <= 2:
+                    continue
+                cer = fastwer.score_sent(prob_surname.lower(), part.lower(), char_level=True)
+                if cer < min_cer:
+                    min_cer = cer
+                    best_surname = surname
+                if cer == 0:
+                    break
         probe_surnames_scores.append([best_surname, min_cer])
 
     probe_surnames_scores.sort(key=lambda x: x[1])
@@ -275,51 +277,34 @@ def answer_for_img(img, coords, surnames, num_players, main=False):
 
 @app.route('/api/image', methods=['POST'])
 def upload():
-    t = time.time()
-
-    original_image = request.files['image']
-    original_image.save("input.png")
-
     input = {}
     for item in request.form:
         input[item] = request.form[item].replace("\\'", "")
         if item == "team":
             input[item] = json.loads(input[item])
 
-    original_img = cv2.imread("input.png")
     team_members = [player["full_name"] for player in input["team"]]
 
-    main_players = []
-    support_players = []
-    scores_main = []
-    scores_support = []
-    for state in [("coords_lineup_1", "coords_subs_1"), ("coords_lineup_2", "coords_subs_2"),
-                  ("coords_lineup_3", "coords_subs_3")]:
-        if input[state[0]] == "":
-            continue
-        coords = list(map(int, input[state[0]].split(",")))
-        scores_main, main_players = answer_for_img(original_img, coords, team_members, 11, True)
+    text = request.form["text"]
 
-        if input[state[1]] == "":
-            continue
-        coords = list(map(int, input[state[1]].split(",")))
-        scores_support, support_players = answer_for_img(original_img, coords, team_members, 9)
+    candidates = re.sub(r"[^A-Za-z ]", "", text).split()
+    surnames = choose_the_most_suitable_candidates(candidates, team_members)
+    all_unique_surnames = set()
+    all_unique_list = []
+    for surname, score in surnames:
+        tmp = len(all_unique_surnames)
+        all_unique_surnames.add(surname)
+        if len(all_unique_surnames) != tmp:
+            all_unique_list.append([surname, score])
 
-    main_recognized = sum([1 for x in scores_main if x <= 50])
-    support_recognized = sum([1 for x in scores_support if x <= 50])
-
-    print((time.time() - t))
-
+    ans_surnames = [x for x in all_unique_list if x[1] < 70]
     return json.dumps({
-        "code1": 1 if main_recognized >= 11 else 0,
-        "code2": f"{main_recognized}/{support_recognized}",
-        "code3": 1 if main_recognized >= 11 else 0,
-        "lineups": list(main_players),
-        "substitutions": list(support_players)
+        "team_members": [x[0] for x in ans_surnames],
+        "scores": [x[1] / 100 for x in ans_surnames]
     })
 
 
 if __name__ == "__main__":
-    # from waitress import serve
-    # serve(app, host="0.0.0.0", port=3000)
-    app.run(debug=True)
+    from waitress import serve
+    serve(app, host="0.0.0.0", port=3000)
+    # app.run(debug=True)

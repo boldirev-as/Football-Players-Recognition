@@ -1,333 +1,252 @@
 [
   {
-    "id": "5926",
-    "number": "5",
-    "full_name": "Filip Uremovic",
-    "short_name": "Uremovic",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "15804",
-    "number": "40",
-    "full_name": "Chidera Ejuke",
+    "id": "19934",
+    "number": "37",
+    "full_name": "Levis Schaber",
     "short_name": "",
     "fio1": "",
     "fio2": "",
     "fio3": ""
   },
   {
-    "id": "19861",
-    "number": "12",
-    "full_name": "Tjark Ernst",
-    "short_name": "",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "19866",
-    "number": "44",
-    "full_name": "Linus Gechter",
-    "short_name": "",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "19915",
-    "number": "42",
-    "full_name": "Julian Eitschberger",
-    "short_name": "",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "19923",
-    "number": "0",
-    "full_name": "Lukas Ullrich",
-    "short_name": "",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "22758",
-    "number": "3",
-    "full_name": "Agustin Rogel",
-    "short_name": "Rogel",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "24420",
-    "number": "30",
-    "full_name": "Dong-Jun Lee",
-    "short_name": "",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "25107",
-    "number": "31",
-    "full_name": "Marton Dardai",
-    "short_name": "Dardai",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "37933",
-    "number": "2",
-    "full_name": "Peter Pekarik",
-    "short_name": "Pekarik",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "41064",
-    "number": "19",
-    "full_name": "Stevan Jovetic",
-    "short_name": "",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "57201",
-    "number": "18",
-    "full_name": "Wilfried Kanga",
-    "short_name": "",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "57230",
-    "number": "17",
-    "full_name": "Jessic Ngankam",
-    "short_name": "",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "68794",
-    "number": "14",
-    "full_name": "Dodi Lukebakio",
-    "short_name": "Lukebakio",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "70438",
-    "number": "6",
-    "full_name": "Vladimir Darida",
-    "short_name": "Darida",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "70439",
-    "number": "11",
-    "full_name": "Myziane Maolida",
-    "short_name": "Maolida",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "70440",
-    "number": "17",
-    "full_name": "Maximilian Mittelstadt",
-    "short_name": "Mittelstadt",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "70442",
-    "number": "8",
-    "full_name": "Suat Serdar",
-    "short_name": "Serdar",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "70443",
-    "number": "29",
-    "full_name": "Lucas Tousart",
-    "short_name": "Tousart",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "70445",
-    "number": "27",
-    "full_name": "Kevin-Prince Boateng",
-    "short_name": "Boateng",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "70446",
-    "number": "1",
-    "full_name": "Oliver Christensen",
-    "short_name": "Christensen",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "70448",
-    "number": "21",
-    "full_name": "Marvin Plattenhardt",
-    "short_name": "Plattenhardt",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "70449",
-    "number": "23",
-    "full_name": "Marco Richter",
-    "short_name": "Richter",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "79181",
-    "number": "49",
-    "full_name": "Cristalino Atemona",
-    "short_name": "",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "82845",
-    "number": "34",
-    "full_name": "Ivan Sunjic",
-    "short_name": "Sunjic",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "83145",
-    "number": "36",
-    "full_name": "Deyovaisio Zeefuik",
-    "short_name": "Zeefuik",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "90527",
-    "number": "16",
-    "full_name": "Jonjoe Kenny",
-    "short_name": "Kenny",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "94552",
-    "number": "20",
-    "full_name": "Marc Oliver Kempf",
-    "short_name": "Kempf",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "97597",
-    "number": "10",
-    "full_name": "Jean-Paul Boetius",
-    "short_name": "",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "105414",
-    "number": "7",
-    "full_name": "Davie Selke",
-    "short_name": "Selke",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "108718",
-    "number": "33",
-    "full_name": "Kwasigroch R.",
-    "short_name": "Kwasigroch",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "108719",
-    "number": "39",
-    "full_name": "Derry Scherhant",
-    "short_name": "Scherhant",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "110487",
-    "number": "0",
-    "full_name": "Schwarz S.",
-    "short_name": "",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "121321",
+    "id": "56436",
     "number": "22",
-    "full_name": "Rune Jarstein",
-    "short_name": "Jarstein",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "130740",
-    "number": "31",
-    "full_name": "Sonny Ziemer",
-    "short_name": "Ziemer",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "153606",
-    "number": "0",
-    "full_name": "Joel da Silva Kiala",
-    "short_name": "da Silva Kiala",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "160325",
-    "number": "21",
-    "full_name": "David Panka",
+    "full_name": "Vitus Eicher",
     "short_name": "",
+    "fio1": "",
+    "fio2": "",
+    "fio3": ""
+  },
+  {
+    "id": "56437",
+    "number": "1",
+    "full_name": "Kevin Muller",
+    "short_name": "",
+    "fio1": "",
+    "fio2": "",
+    "fio3": ""
+  },
+  {
+    "id": "56438",
+    "number": "34",
+    "full_name": "Tschernuth Paul",
+    "short_name": "",
+    "fio1": "",
+    "fio2": "",
+    "fio3": ""
+  },
+  {
+    "id": "56439",
+    "number": "20",
+    "full_name": "Dzenis Burnic",
+    "short_name": "",
+    "fio1": "",
+    "fio2": "",
+    "fio3": ""
+  },
+  {
+    "id": "56440",
+    "number": "2",
+    "full_name": "Marnon Busch",
+    "short_name": "",
+    "fio1": "",
+    "fio2": "",
+    "fio3": ""
+  },
+  {
+    "id": "56441",
+    "number": "19",
+    "full_name": "Jonas Fohrenbach",
+    "short_name": "",
+    "fio1": "",
+    "fio2": "",
+    "fio3": ""
+  },
+  {
+    "id": "56443",
+    "number": "6",
+    "full_name": "Patrick Mainka",
+    "short_name": "",
+    "fio1": "",
+    "fio2": "",
+    "fio3": ""
+  },
+  {
+    "id": "56445",
+    "number": "4",
+    "full_name": "Tim Siersleben",
+    "short_name": "",
+    "fio1": "",
+    "fio2": "",
+    "fio3": ""
+  },
+  {
+    "id": "56446",
+    "number": "30",
+    "full_name": "Norman Theuerkauf",
+    "short_name": "",
+    "fio1": "",
+    "fio2": "",
+    "fio3": ""
+  },
+  {
+    "id": "56447",
+    "number": "35",
+    "full_name": "Mert Arslan",
+    "short_name": "",
+    "fio1": "",
+    "fio2": "",
+    "fio3": ""
+  },
+  {
+    "id": "56448",
+    "number": "8",
+    "full_name": "Andreas Geipl",
+    "short_name": "",
+    "fio1": "",
+    "fio2": "",
+    "fio3": ""
+  },
+  {
+    "id": "56451",
+    "number": "28",
+    "full_name": "Melvin Ramusovic",
+    "short_name": "",
+    "fio1": "",
+    "fio2": "",
+    "fio3": ""
+  },
+  {
+    "id": "56452",
+    "number": "18",
+    "full_name": "Marvin Rittmuller",
+    "short_name": "",
+    "fio1": "",
+    "fio2": "",
+    "fio3": ""
+  },
+  {
+    "id": "56453",
+    "number": "3",
+    "full_name": "Jan Schoppner",
+    "short_name": "",
+    "fio1": "",
+    "fio2": "",
+    "fio3": ""
+  },
+  {
+    "id": "56454",
+    "number": "16",
+    "full_name": "Kevin Sessa",
+    "short_name": "",
+    "fio1": "",
+    "fio2": "",
+    "fio3": ""
+  },
+  {
+    "id": "56456",
+    "number": "10",
+    "full_name": "Tim Kleindienst",
+    "short_name": "",
+    "fio1": "",
+    "fio2": "",
+    "fio3": ""
+  },
+  {
+    "id": "56457",
+    "number": "24",
+    "full_name": "Christian Kuhlwetter",
+    "short_name": "",
+    "fio1": "",
+    "fio2": "",
+    "fio3": ""
+  },
+  {
+    "id": "56460",
+    "number": "44",
+    "full_name": "Elidon Qenaj",
+    "short_name": "",
+    "fio1": "",
+    "fio2": "",
+    "fio3": ""
+  },
+  {
+    "id": "56461",
+    "number": "9",
+    "full_name": "Stefan Schimmer",
+    "short_name": "",
+    "fio1": "",
+    "fio2": "",
+    "fio3": ""
+  },
+  {
+    "id": "56462",
+    "number": "11",
+    "full_name": "Denis Thomalla",
+    "short_name": "",
+    "fio1": "",
+    "fio2": "",
+    "fio3": ""
+  },
+  {
+    "id": "56464",
+    "number": "0",
+    "full_name": "Schmidt Frank",
+    "short_name": "",
+    "fio1": "",
+    "fio2": "",
+    "fio3": ""
+  },
+  {
+    "id": "57115",
+    "number": "42",
+    "full_name": "Tim Kother",
+    "short_name": "",
+    "fio1": "",
+    "fio2": "",
+    "fio3": ""
+  },
+  {
+    "id": "57389",
+    "number": "27",
+    "full_name": "Thomas Keller",
+    "short_name": "",
+    "fio1": "",
+    "fio2": "",
+    "fio3": ""
+  },
+  {
+    "id": "57409",
+    "number": "17",
+    "full_name": "Florian Pick",
+    "short_name": "",
+    "fio1": "",
+    "fio2": "",
+    "fio3": ""
+  },
+  {
+    "id": "57706",
+    "number": "21",
+    "full_name": "Adrian Beck",
+    "short_name": "Beck",
+    "fio1": "",
+    "fio2": "",
+    "fio3": ""
+  },
+  {
+    "id": "57707",
+    "number": "37",
+    "full_name": "Jan-Niklas Beste",
+    "short_name": "Beste",
+    "fio1": "",
+    "fio2": "",
+    "fio3": ""
+  },
+  {
+    "id": "57708",
+    "number": "33",
+    "full_name": "Lennard Maloney",
+    "short_name": "Maloney",
     "fio1": "",
     "fio2": "",
     "fio3": ""
