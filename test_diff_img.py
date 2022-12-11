@@ -236,7 +236,7 @@ def get_all_possible_surnames(img, main=False, surnames=None):
     return candidates
 
 
-def choose_the_most_suitable_candidates(candidates, surnames):
+def choose_the_most_suitable_candidates(candidates, surnames, team_numbers):
     t = time.time()
     probe_surnames_scores = []
     for j, prob_surname in enumerate(candidates):
@@ -263,9 +263,11 @@ def choose_the_most_suitable_candidates(candidates, surnames):
                     break
 
         other_cand = []
-        for other_surname in surnames:
+        other_cand_nums = []
+        for k, other_surname in enumerate(surnames):
             if text_part.lower() in other_surname.lower():
                 other_cand.append(other_surname)
+                other_cand_nums.append(team_numbers[k])
 
         if len(other_cand) == 1:
             probe_surnames_scores.append([best_surname, min_cer])
@@ -275,16 +277,24 @@ def choose_the_most_suitable_candidates(candidates, surnames):
         if which_part == 0:
             print(other_cand, candidates[j] + " " + candidates[j + 1])
             for other_surname in other_cand:
-                cer = fastwer.score_sent(candidates[j].lower() + " " + candidates[j + 1].lower(), other_surname.lower(), char_level=True)
+                cer = fastwer.score_sent(candidates[j].lower() + " " + candidates[j + 1].lower(), other_surname.lower(),
+                                         char_level=True)
                 if cer < min_cer:
                     min_cer = cer
                     best_surname = other_surname
         else:
             print(other_cand, candidates[j - 1] + " " + candidates[j])
             for other_surname in other_cand:
-                cer = fastwer.score_sent(candidates[j - 1].lower() + " " + candidates[j].lower(), other_surname.lower(), char_level=True)
+                cer = fastwer.score_sent(candidates[j - 1].lower() + " " + candidates[j].lower(), other_surname.lower(),
+                                         char_level=True)
                 if cer < min_cer:
                     min_cer = cer
+                    best_surname = other_surname
+
+        if min_cer > 20 and candidates[j - 1].isdigit():
+            for num, other_surname in zip(other_cand_nums, other_cand):
+                if num == candidates[j - 1]:
+                    min_cer = 0.1
                     best_surname = other_surname
 
         probe_surnames_scores.append([best_surname, min_cer])
@@ -319,12 +329,14 @@ def upload():
         if item == "team":
             input[item] = json.loads(input[item])
 
-    team_members = [player["full_name"].replace("(C)", "").replace(" De la Flor", "").replace("(TW)", "") for player in input["team"]]
+    team_members = [player["full_name"].replace("(C)", "").replace(" De la Flor", "").replace("(TW)", "") for player in
+                    input["team"]]
+    team_numbers = [player["number"] for player in input["team"]]
 
     text = unidecode(request.form["text"]).replace("(C)", "").replace(".", " ")
 
-    candidates = re.sub(r"[^A-Za-z- ]", "", text).split()
-    surnames = choose_the_most_suitable_candidates(candidates, team_members)
+    candidates = [x.strip(" ") for x in re.sub(r"[^A-Za-z0-9- ]", "", text).split()]
+    surnames = choose_the_most_suitable_candidates(candidates, team_members, team_numbers)
     print(surnames)
     all_unique_surnames = set()
     all_unique_list = []
