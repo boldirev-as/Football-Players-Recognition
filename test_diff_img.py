@@ -346,11 +346,13 @@ def upload():
         if len(all_unique_surnames) != tmp:
             all_unique_list.append([surname, score])
 
-    ans_surnames = [x for x in all_unique_list if x[1] < 80][:11]
-    return json.dumps({
-        "team_members": [x[0] for x in ans_surnames],
-        "scores": [x[1] / 100 for x in ans_surnames]
-    })
+    main_surnames = [x for x in all_unique_list if x[1] < 80][:11]
+    ans_surnames = {"recognized_players": []}
+    for surname in main_surnames:
+        for member in input["team"]:
+            if member["full_name"] == surname[0]:
+                ans_surnames["recognized_players"].append(f"{member['id']}, {member['full_name']} ({surname[1]})")
+    return json.dumps(ans_surnames)
 
 
 if __name__ == "__main__":
