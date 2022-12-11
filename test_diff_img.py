@@ -5,8 +5,9 @@ import time
 
 import cv2
 import numpy as np
-import pytesseract
+# import pytesseract
 from imutils.object_detection import non_max_suppression
+from unidecode import unidecode
 
 from flask import Flask, request
 from flask_restful import Api
@@ -238,19 +239,54 @@ def get_all_possible_surnames(img, main=False, surnames=None):
 def choose_the_most_suitable_candidates(candidates, surnames):
     t = time.time()
     probe_surnames_scores = []
-    for prob_surname in candidates:
+    for j, prob_surname in enumerate(candidates):
+        if len(prob_surname) < 3:
+            continue
         min_cer = 1000
         best_surname = ""
+        which_part = 1
+        text_part = ""
         for surname in surnames:
-            for part in surname.split():
+            for i, part in enumerate(surname.split()):
                 if len(part) <= 2:
                     continue
                 cer = fastwer.score_sent(prob_surname.lower(), part.lower(), char_level=True)
                 if cer < min_cer:
                     min_cer = cer
                     best_surname = surname
+                    if i == 0 and len(surname.split()) != 1:
+                        which_part = 0
+                    else:
+                        which_part = 1
+                    text_part = part
                 if cer == 0:
                     break
+
+        other_cand = []
+        for other_surname in surnames:
+            if text_part.lower() in other_surname.lower():
+                other_cand.append(other_surname)
+
+        if len(other_cand) == 1:
+            probe_surnames_scores.append([best_surname, min_cer])
+            continue
+
+        min_cer = 1000
+        if which_part == 0:
+            print(other_cand, candidates[j] + " " + candidates[j + 1])
+            for other_surname in other_cand:
+                cer = fastwer.score_sent(candidates[j].lower() + " " + candidates[j + 1].lower(), other_surname.lower(), char_level=True)
+                if cer < min_cer:
+                    min_cer = cer
+                    best_surname = other_surname
+        else:
+            print(other_cand, candidates[j - 1] + " " + candidates[j])
+            for other_surname in other_cand:
+                cer = fastwer.score_sent(candidates[j - 1].lower() + " " + candidates[j].lower(), other_surname.lower(), char_level=True)
+                if cer < min_cer:
+                    min_cer = cer
+                    best_surname = other_surname
+
         probe_surnames_scores.append([best_surname, min_cer])
 
     probe_surnames_scores.sort(key=lambda x: x[1])
@@ -283,12 +319,13 @@ def upload():
         if item == "team":
             input[item] = json.loads(input[item])
 
-    team_members = [player["full_name"] for player in input["team"]]
+    team_members = [player["full_name"].replace("(C)", "").replace(" De la Flor", "").replace("(TW)", "") for player in input["team"]]
 
-    text = request.form["text"]
+    text = unidecode(request.form["text"]).replace("(C)", "").replace(".", " ")
 
-    candidates = re.sub(r"[^A-Za-z ]", "", text).split()
+    candidates = re.sub(r"[^A-Za-z- ]", "", text).split()
     surnames = choose_the_most_suitable_candidates(candidates, team_members)
+    print(surnames)
     all_unique_surnames = set()
     all_unique_list = []
     for surname, score in surnames:
@@ -297,7 +334,7 @@ def upload():
         if len(all_unique_surnames) != tmp:
             all_unique_list.append([surname, score])
 
-    ans_surnames = [x for x in all_unique_list if x[1] < 70]
+    ans_surnames = [x for x in all_unique_list if x[1] < 80][:11]
     return json.dumps({
         "team_members": [x[0] for x in ans_surnames],
         "scores": [x[1] / 100 for x in ans_surnames]
@@ -305,6 +342,7 @@ def upload():
 
 
 if __name__ == "__main__":
-    from waitress import serve
-    serve(app, host="0.0.0.0", port=3000)
-    # app.run(debug=True)
+    # from waitress import serve
+
+    # serve(app, host="0.0.0.0", port=3000)
+    app.run(debug=True)
