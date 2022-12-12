@@ -1,344 +1,292 @@
 [
   {
-    "id": "3406",
-    "number": "18",
-    "full_name": "Mandela Egbo",
-    "short_name": "Egbo",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
+    "id": "44647",
+    "number": "31",
+    "full_name": "Aitor Paredes",
+    "short_name": "Paredes",
+    "pfid": null,
+    "fio1": null,
+    "fio2": null,
+    "fio3": null
   },
   {
-    "id": "3409",
-    "number": "19",
-    "full_name": "Jack Payne",
-    "short_name": "Payne",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "3426",
-    "number": "1",
-    "full_name": "Joe Wollacott",
-    "short_name": "Wollacott",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "79503",
-    "number": "17",
-    "full_name": "Jesuran Rak-Sakyi",
-    "short_name": "",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "80923",
-    "number": "23",
-    "full_name": "Corey Blackett-Taylor",
-    "short_name": "Blackett-Taylor",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "80924",
-    "number": "4",
-    "full_name": "George Dobson",
-    "short_name": "Dobson",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "80927",
-    "number": "30",
-    "full_name": "Nathan Harness",
-    "short_name": "Harness",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "80928",
-    "number": "24",
-    "full_name": "Ryan Inniss",
-    "short_name": "Inniss",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "80930",
-    "number": "10",
-    "full_name": "Albie Morgan",
-    "short_name": "Morgan",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "80932",
-    "number": "9",
-    "full_name": "Jayden Stockley",
-    "short_name": "Stockley",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "80934",
-    "number": "22",
-    "full_name": "Chuks Aneke",
-    "short_name": "Aneke",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "80937",
-    "number": "8",
-    "full_name": "Jake Forster-Caskey",
-    "short_name": "Forster-Caskey",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "80939",
+    "id": "68925",
     "number": "7",
-    "full_name": "Diallang Jaiyesimi",
-    "short_name": "Jaiyesimi",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
+    "full_name": "Alex Berenguer",
+    "short_name": "Berenguer",
+    "pfid": null,
+    "fio1": null,
+    "fio2": null,
+    "fio3": null
   },
   {
-    "id": "81118",
-    "number": "12",
-    "full_name": "Conor McGrandles",
-    "short_name": "McGrandles",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "81269",
-    "number": "28",
-    "full_name": "Sean Clare",
-    "short_name": "Clare",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "81270",
-    "number": "13",
-    "full_name": "Craig MacGillivray",
-    "short_name": "MacGillivray",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "81307",
-    "number": "35",
-    "full_name": "Daniel Kanu",
-    "short_name": "Kanu",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "81337",
-    "number": "5",
-    "full_name": "Sam Lavelle",
-    "short_name": "Lavelle",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "81338",
+    "id": "68933",
     "number": "21",
-    "full_name": "Scott Fraser",
-    "short_name": "Fraser",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
+    "full_name": "Ander Capa",
+    "short_name": "Capa",
+    "pfid": null,
+    "fio1": null,
+    "fio2": null,
+    "fio3": null
   },
   {
-    "id": "81563",
-    "number": "2",
-    "full_name": "Steven Sessegnon",
-    "short_name": "Sessegnon",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "82219",
-    "number": "0",
-    "full_name": "Garner Ben",
+    "id": "80293",
+    "number": "23",
+    "full_name": "Ander Herrera",
     "short_name": "",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
+    "pfid": null,
+    "fio1": null,
+    "fio2": null,
+    "fio3": null
   },
   {
-    "id": "82728",
+    "id": "44657",
+    "number": "35",
+    "full_name": "Ander Iruarrizaga",
+    "short_name": "Iruarrizaga",
+    "pfid": null,
+    "fio1": null,
+    "fio2": null,
+    "fio3": null
+  },
+  {
+    "id": "68937",
+    "number": "20",
+    "full_name": "Asier Villalibre",
+    "short_name": "Villalibre",
+    "pfid": null,
+    "fio1": null,
+    "fio2": null,
+    "fio3": null
+  },
+  {
+    "id": "68934",
     "number": "14",
-    "full_name": "Charlie Kirk",
-    "short_name": "Kirk",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
+    "full_name": "Dani Garcia",
+    "short_name": "Garcia",
+    "pfid": null,
+    "fio1": null,
+    "fio2": null,
+    "fio3": null
   },
   {
-    "id": "83020",
+    "id": "68930",
     "number": "3",
-    "full_name": "Thomas Terell",
-    "short_name": "Terell",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
+    "full_name": "Dani Vivian",
+    "short_name": "Vivian",
+    "pfid": null,
+    "fio1": null,
+    "fio2": null,
+    "fio3": null
   },
   {
-    "id": "83125",
-    "number": "3",
-    "full_name": "Terrell Thomas",
-    "short_name": "Thomas",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "87515",
-    "number": "26",
-    "full_name": "Lucas Ness",
+    "id": "14080",
+    "number": "12",
+    "full_name": "Gorka Guruzeta",
     "short_name": "",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
+    "pfid": null,
+    "fio1": null,
+    "fio2": null,
+    "fio3": null
   },
   {
-    "id": "87518",
-    "number": "32",
-    "full_name": "Aaron Henry",
+    "id": "68928",
+    "number": "10",
+    "full_name": "Iker Muniain",
+    "short_name": "Muniain",
+    "pfid": null,
+    "fio1": null,
+    "fio2": null,
+    "fio3": null
+  },
+  {
+    "id": "68931",
+    "number": "19",
+    "full_name": "Inaki Williams",
+    "short_name": "Williams",
+    "pfid": null,
+    "fio1": null,
+    "fio2": null,
+    "fio3": null
+  },
+  {
+    "id": "123967",
+    "number": "15",
+    "full_name": "Inigo Lekue",
     "short_name": "",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
+    "pfid": null,
+    "fio1": null,
+    "fio2": null,
+    "fio3": null
   },
   {
-    "id": "98293",
-    "number": "6",
-    "full_name": "Eoghan O'Connell",
-    "short_name": "O'Connell",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
+    "id": "35484",
+    "number": "4",
+    "full_name": "Inigo Martinez",
+    "short_name": "Martinez",
+    "pfid": null,
+    "fio1": null,
+    "fio2": null,
+    "fio3": null
   },
   {
-    "id": "101285",
-    "number": "40",
-    "full_name": "Nazir Bakrin",
-    "short_name": "Bakrin",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
+    "id": "18688",
+    "number": "2",
+    "full_name": "Jon Morcillo",
+    "short_name": "",
+    "pfid": null,
+    "fio1": null,
+    "fio2": null,
+    "fio3": null
   },
   {
-    "id": "101355",
+    "id": "37685",
+    "number": "13",
+    "full_name": "Julen Agirrezabala",
+    "short_name": "Agirrezabala",
+    "pfid": null,
+    "fio1": null,
+    "fio2": null,
+    "fio3": null
+  },
+  {
+    "id": "44653",
+    "number": "18",
+    "full_name": "Luis Bilbao",
+    "short_name": "Bilbao",
+    "pfid": null,
+    "fio1": null,
+    "fio2": null,
+    "fio3": null
+  },
+  {
+    "id": "44643",
+    "number": "7",
+    "full_name": "Malcom Adu Ares Djalo",
+    "short_name": "Ares Djalo",
+    "pfid": null,
+    "fio1": null,
+    "fio2": null,
+    "fio3": null
+  },
+  {
+    "id": "68924",
     "number": "24",
-    "full_name": "Charlie Barker",
-    "short_name": "Barker",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
+    "full_name": "Mikel Balenziaga",
+    "short_name": "Balenziaga",
+    "pfid": null,
+    "fio1": null,
+    "fio2": null,
+    "fio3": null
   },
   {
-    "id": "114255",
-    "number": "33",
-    "full_name": "Miles Leaburn",
-    "short_name": "Leaburn",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
+    "id": "68929",
+    "number": "6",
+    "full_name": "Mikel Vesga",
+    "short_name": "Vesga",
+    "pfid": null,
+    "fio1": null,
+    "fio2": null,
+    "fio3": null
   },
   {
-    "id": "128450",
-    "number": "36",
-    "full_name": "Richard Chin",
-    "short_name": "Chin",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
+    "id": "45244",
+    "number": "12",
+    "full_name": "Nico Williams",
+    "short_name": "Williams",
+    "pfid": null,
+    "fio1": null,
+    "fio2": null,
+    "fio3": null
   },
   {
-    "id": "128451",
+    "id": "68938",
+    "number": "19",
+    "full_name": "Oier Zarraga",
+    "short_name": "Zarraga",
+    "pfid": null,
+    "fio1": null,
+    "fio2": null,
+    "fio3": null
+  },
+  {
+    "id": "45237",
+    "number": "8",
+    "full_name": "Oihan Sancet",
+    "short_name": "Sancet",
+    "pfid": null,
+    "fio1": null,
+    "fio2": null,
+    "fio3": null
+  },
+  {
+    "id": "68926",
+    "number": "18",
+    "full_name": "Oscar de Marcos",
+    "short_name": "de Marcos",
+    "pfid": null,
+    "fio1": null,
+    "fio2": null,
+    "fio3": null
+  },
+  {
+    "id": "68927",
+    "number": "22",
+    "full_name": "Raul Garcia",
+    "short_name": "Garcia",
+    "pfid": null,
+    "fio1": null,
+    "fio2": null,
+    "fio3": null
+  },
+  {
+    "id": "33553",
+    "number": "23",
+    "full_name": "Unai Simon",
+    "short_name": "",
+    "pfid": null,
+    "fio1": null,
+    "fio2": null,
+    "fio3": null
+  },
+  {
+    "id": "32383",
+    "number": "16",
+    "full_name": "Unai Vencedor",
+    "short_name": "",
+    "pfid": null,
+    "fio1": null,
+    "fio2": null,
+    "fio3": null
+  },
+  {
+    "id": "143059",
     "number": "0",
-    "full_name": "Jeremy Santos",
-    "short_name": "Santos",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "134690",
-    "number": "43",
-    "full_name": "Tyreece Campbell",
+    "full_name": "Valverde Tejedor Ernesto",
     "short_name": "",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
+    "pfid": null,
+    "fio1": null,
+    "fio2": null,
+    "fio3": null
   },
   {
-    "id": "146885",
-    "number": "45",
-    "full_name": "Karoy Anderson",
-    "short_name": "Anderson",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
+    "id": "68923",
+    "number": "5",
+    "full_name": "Yeray Alvarez",
+    "short_name": "Alvarez",
+    "pfid": null,
+    "fio1": null,
+    "fio2": null,
+    "fio3": null
   },
   {
-    "id": "146886",
-    "number": "42",
-    "full_name": "Matthew Dench",
-    "short_name": "Dench",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "149464",
-    "number": "41",
-    "full_name": "Kone Ahmed",
-    "short_name": "",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "161420",
-    "number": null,
-    "full_name": "Zach Mitchell",
-    "short_name": "Mitchell",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
-  },
-  {
-    "id": "161498",
-    "number": "0",
-    "full_name": "Henry Rylah",
-    "short_name": "",
-    "fio1": "",
-    "fio2": "",
-    "fio3": ""
+    "id": "68932",
+    "number": "17",
+    "full_name": "Yuri Berchiche",
+    "short_name": "Berchiche",
+    "pfid": null,
+    "fio1": null,
+    "fio2": null,
+    "fio3": null
   }
-]
+] 
