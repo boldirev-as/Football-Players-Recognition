@@ -114,6 +114,8 @@ def upload():
     team_members.extend(extra_members)
 
     text = unidecode(request.form["text"]).replace("(C)", "").replace(".", " ")
+    for repl in range(10):
+        text = text.replace(str(repl) + "-", str(repl) + " ")
 
     candidates = [x.strip(" ") for x in re.sub(r"[^A-Za-z0-9- ]", "", text).split()]
     surnames = choose_the_most_suitable_candidates(candidates, team_members, team_numbers)
