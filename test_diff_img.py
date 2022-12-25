@@ -1,12 +1,6 @@
-import json
-import os
 import re
 import time
 
-import cv2
-import numpy as np
-# import pytesseract
-from imutils.object_detection import non_max_suppression
 from unidecode import unidecode
 
 from flask import Flask, request
@@ -30,8 +24,8 @@ def choose_best_surname(other_cand, first_name, second_name, best_surname, min_c
     for other_surname in other_cand:
         cer = fastwer.score_sent(second_name.lower() + " " + first_name.lower(),
                                  other_surname.lower(), char_level=True)
-        if other_surname.split()[1][0].lower() == first_name[0].lower():
-            cer = 0.1
+        if other_surname.split()[-1][0].lower() == first_name[0].lower() and cer > 0.1:
+            cer = 0.3
         if cer < min_cer:
             min_cer = cer
             best_surname = other_surname
@@ -72,8 +66,10 @@ def choose_the_most_suitable_candidates(candidates, surnames, team_numbers):
 
         min_cer = 1000
         print(other_cand, candidates[j - 1] + " " + candidates[j] + " " + candidates[j + 1])
-        best_surname, min_cer = choose_best_surname(other_cand, candidates[j + 1], candidates[j], best_surname, min_cer)
-        best_surname, min_cer = choose_best_surname(other_cand, candidates[j - 1], candidates[j], best_surname, min_cer)
+        if len(candidates) > j + 1:
+            best_surname, min_cer = choose_best_surname(other_cand, candidates[j], candidates[j + 1], best_surname, min_cer)
+        if j - 1 >= 0:
+            best_surname, min_cer = choose_best_surname(other_cand, candidates[j - 1], candidates[j], best_surname, min_cer)
 
         if min_cer > 20 and candidates[j - 1].isdigit():
             for num, other_surname in zip(other_cand_nums, other_cand):
@@ -113,7 +109,7 @@ def upload():
     team_numbers.extend(extra_nums)
     team_members.extend(extra_members)
 
-    text = unidecode(request.form["text"]).replace("(C)", "").replace(".", " ")
+    text = unidecode(request.form["text"]).replace("(C)", "").replace(".", " ").replace("0", "O")
     for repl in range(10):
         text = text.replace(str(repl) + "-", str(repl) + " ")
 
@@ -132,6 +128,7 @@ def upload():
     for i in range(len(main_surnames)):
         if main_surnames[i][0] in change_players:
             main_surnames[i][0] = change_players[main_surnames[i][0]]
+
     ans_surnames = {"recognized_players": []}
     for surname in main_surnames:
         for member in input["team"]:
@@ -141,7 +138,7 @@ def upload():
 
 
 if __name__ == "__main__":
-    from waitress import serve
+    # from waitress import serve
 
-    serve(app, host="0.0.0.0", port=3000)
-    # app.run(debug=True)
+    # serve(app, host="0.0.0.0", port=3000)
+    app.run(debug=True)
