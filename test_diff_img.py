@@ -13,6 +13,17 @@ api = Api(app)
 
 
 def choose_best_surname(other_cand, first_name, second_name, best_surname, min_cer):
+    counter = 0
+    prob_best = ""
+    for other_surname in other_cand:
+        if other_surname.split()[-1].lower() in [first_name.lower(), second_name.lower()]:
+            counter += 1
+            prob_best = other_surname
+
+    if counter == 1:
+        min_cer = 0.0
+        best_surname = prob_best
+
     for other_surname in other_cand:
         cer = fastwer.score_sent(first_name.lower() + " " + second_name.lower(),
                                  other_surname.lower(), char_level=True)
@@ -67,9 +78,11 @@ def choose_the_most_suitable_candidates(candidates, surnames, team_numbers):
         min_cer = 1000
         # print(other_cand, candidates[j - 1] + " " + candidates[j] + " " + candidates[j + 1])
         if len(candidates) > j + 1:
-            best_surname, min_cer = choose_best_surname(other_cand, candidates[j], candidates[j + 1], best_surname, min_cer)
+            best_surname, min_cer = choose_best_surname(other_cand, candidates[j],
+                                                        candidates[j + 1], best_surname, min_cer)
         if j - 1 >= 0:
-            best_surname, min_cer = choose_best_surname(other_cand, candidates[j - 1], candidates[j], best_surname, min_cer)
+            best_surname, min_cer = choose_best_surname(other_cand, candidates[j - 1],
+                                                        candidates[j], best_surname, min_cer)
 
         if min_cer > 20 and candidates[j - 1].isdigit():
             for num, other_surname in zip(other_cand_nums, other_cand):
@@ -90,8 +103,8 @@ def upload():
     for item in request.form:
         input[item] = request.form[item].replace("\\'", "")
         if item == "team":
-            input[item] = json.loads(input[item])
             print(input[item])
+            input[item] = json.loads(input[item])
 
     team_members = [player["full_name"].replace("(C)", "").replace(" De la Flor", "").replace("(TW)", "") for player in
                     input["team"]]
@@ -114,6 +127,7 @@ def upload():
         text = text.replace(str(repl) + "-", str(repl) + " ")
 
     candidates = [x.strip(" ") for x in re.sub(r"[^A-Za-z0-9- ]", " ", text).split() if len(x.strip(" ")) > 0]
+    print(candidates)
     surnames = choose_the_most_suitable_candidates(candidates, team_members, team_numbers)
     print(surnames)
 
