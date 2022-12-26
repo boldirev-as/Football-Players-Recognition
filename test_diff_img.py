@@ -54,7 +54,7 @@ def choose_the_most_suitable_candidates(candidates, surnames, team_numbers):
         text_part = ""
         for surname in surnames:
             for i, part in enumerate(surname.split()):
-                if len(part) <= 2:
+                if len(part) < 2:
                     continue
                 cer = fastwer.score_sent(prob_surname.lower(), part.lower(), char_level=True)
                 if cer < min_cer:
@@ -139,7 +139,7 @@ def upload():
         if len(all_unique_surnames) != tmp:
             all_unique_list.append([surname, score])
 
-    main_surnames = [x for x in all_unique_list if x[1] < 80][:11]
+    main_surnames = [x for x in all_unique_list][:11]
     for i in range(len(main_surnames)):
         if main_surnames[i][0] in change_players:
             main_surnames[i][0] = change_players[main_surnames[i][0]]
