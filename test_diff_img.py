@@ -113,9 +113,10 @@ def upload():
     for repl in range(10):
         text = text.replace(str(repl) + "-", str(repl) + " ")
 
-    candidates = [x.strip(" ") for x in re.sub(r"[^A-Za-z0-9- ]", "", text).split()]
+    candidates = [x.strip(" ") for x in re.sub(r"[^A-Za-z0-9- ]", " ", text).split() if len(x.strip(" ")) > 0]
     surnames = choose_the_most_suitable_candidates(candidates, team_members, team_numbers)
     print(surnames)
+
     all_unique_surnames = set()
     all_unique_list = []
     for surname, score in surnames:
