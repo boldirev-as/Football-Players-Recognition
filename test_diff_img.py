@@ -65,7 +65,7 @@ def choose_the_most_suitable_candidates(candidates, surnames, team_numbers):
             continue
 
         min_cer = 1000
-        print(other_cand, candidates[j - 1] + " " + candidates[j] + " " + candidates[j + 1])
+        # print(other_cand, candidates[j - 1] + " " + candidates[j] + " " + candidates[j + 1])
         if len(candidates) > j + 1:
             best_surname, min_cer = choose_best_surname(other_cand, candidates[j], candidates[j + 1], best_surname, min_cer)
         if j - 1 >= 0:
