@@ -56,7 +56,9 @@ def choose_the_most_suitable_candidates(candidates, surnames, team_numbers):
             for i, part in enumerate(surname.split()):
                 if len(part) < 2:
                     continue
-                cer = fastwer.score_sent(prob_surname.lower(), part.lower(), char_level=True)
+                cer = min(fastwer.score_sent(prob_surname.lower(), part.lower(), char_level=True),
+                          fastwer.score_sent(part.lower(), prob_surname.lower(), char_level=True))
+
                 if cer < min_cer:
                     min_cer = cer
                     best_surname = surname
@@ -71,12 +73,14 @@ def choose_the_most_suitable_candidates(candidates, surnames, team_numbers):
                 other_cand.append(other_surname)
                 other_cand_nums.append(team_numbers[k])
 
+        print(prob_surname, best_surname, min_cer, text_part)
         if len(other_cand) == 1:
             probe_surnames_scores.append([best_surname, min_cer])
             continue
 
         min_cer = 1000
-        # print(other_cand, candidates[j - 1] + " " + candidates[j] + " " + candidates[j + 1])
+        if j - 1 >= 0 and len(candidates) > j + 1:
+            print(other_cand, candidates[j - 1] + " " + candidates[j] + " " + candidates[j + 1])
         if len(candidates) > j + 1:
             best_surname, min_cer = choose_best_surname(other_cand, candidates[j],
                                                         candidates[j + 1], best_surname, min_cer)
@@ -103,7 +107,7 @@ def upload():
     for item in request.form:
         input[item] = request.form[item].replace("\\'", "")
         if item == "team":
-            print(input[item])
+            print(input[item].replace("\n", ""))
             input[item] = json.loads(input[item])
 
     team_members = [player["full_name"].replace("(C)", "").replace(" De la Flor", "").replace("(TW)", "") for player in
