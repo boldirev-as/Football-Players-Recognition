@@ -47,7 +47,7 @@ def choose_the_most_suitable_candidates(candidates, surnames, team_numbers):
     t = time.time()
     probe_surnames_scores = []
     for j, prob_surname in enumerate(candidates):
-        if len(prob_surname) < 3:
+        if len(prob_surname) < 2:
             continue
         min_cer = 1000
         best_surname = ""
@@ -67,7 +67,7 @@ def choose_the_most_suitable_candidates(candidates, surnames, team_numbers):
         other_cand = []
         other_cand_nums = []
         for k, other_surname in enumerate(surnames):
-            if text_part.lower() in other_surname.lower():
+            if " " + text_part.lower() + " " in " " + other_surname.lower() + " ":
                 other_cand.append(other_surname)
                 other_cand_nums.append(team_numbers[k])
 
