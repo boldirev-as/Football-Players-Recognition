@@ -44,10 +44,9 @@ def choose_best_surname(other_cand, first_name, second_name, best_surname, min_c
 
 
 def choose_the_most_suitable_candidates(candidates, surnames, team_numbers):
-    t = time.time()
     probe_surnames_scores = []
     for j, prob_surname in enumerate(candidates):
-        if len(prob_surname) < 2:
+        if len(prob_surname) < 2 or prob_surname.isdigit():
             continue
         min_cer = 1000
         best_surname = ""
@@ -73,7 +72,6 @@ def choose_the_most_suitable_candidates(candidates, surnames, team_numbers):
                 other_cand.append(other_surname)
                 other_cand_nums.append(team_numbers[k])
 
-        print(prob_surname, best_surname, min_cer, text_part)
         if len(other_cand) == 1:
             probe_surnames_scores.append([best_surname, min_cer])
             continue
@@ -88,26 +86,32 @@ def choose_the_most_suitable_candidates(candidates, surnames, team_numbers):
             best_surname, min_cer = choose_best_surname(other_cand, candidates[j - 1],
                                                         candidates[j], best_surname, min_cer)
 
-        if min_cer > 20 and candidates[j - 1].isdigit():
+        if min_cer > 20 and j - 1 >= 0 and candidates[j - 1].isdigit():
             for num, other_surname in zip(other_cand_nums, other_cand):
                 if num == candidates[j - 1]:
+                    min_cer = 0.1
+                    best_surname = other_surname
+        if min_cer > 20 and j - 2 >= 0 and candidates[j - 2].isdigit():
+            for num, other_surname in zip(other_cand_nums, other_cand):
+                if num == candidates[j - 2]:
+                    print("Gomes is here")
                     min_cer = 0.1
                     best_surname = other_surname
 
         probe_surnames_scores.append([best_surname, min_cer])
 
     probe_surnames_scores.sort(key=lambda x: x[1])
-    print("SCORED DURING", time.time() - t)
     return probe_surnames_scores
 
 
 @app.route('/api/image', methods=['POST'])
 def upload():
+    t = time.time()
     input = {}
     for item in request.form:
         input[item] = request.form[item].replace("\\'", "")
         if item == "team":
-            print(input[item].replace("\n", ""))
+            print(input[item])
             input[item] = json.loads(input[item])
 
     team_members = [player["full_name"].replace("(C)", "").replace(" De la Flor", "").replace("(TW)", "") for player in
@@ -121,6 +125,7 @@ def upload():
                 extra_members.append(member[field])
                 change_players[member[field]] = member["full_name"]
                 extra_nums.append(member["number"])
+
     print(change_players)
     team_numbers = [player["number"] for player in input["team"]]
     team_numbers.extend(extra_nums)
@@ -153,6 +158,7 @@ def upload():
         for member in input["team"]:
             if member["full_name"] == surname[0]:
                 ans_surnames["recognized_players"].append(f"{member['id']}, {member['full_name']} ({surname[1]})")
+    print("SCORED DURING", time.time() - t)
     return json.dumps(ans_surnames)
 
 
