@@ -52,7 +52,8 @@ def choose_the_most_suitable_candidates(candidates, surnames, team_numbers):
         best_surname = ""
         text_part = ""
         for surname in surnames:
-            for i, part in enumerate(surname.split()):
+            # print(surname.split() + surname.split()[-1].split('-'))
+            for i, part in enumerate(surname.split() + surname.split()[-1].split('-')):
                 if len(part) < 2:
                     continue
                 cer = min(fastwer.score_sent(prob_surname.lower(), part.lower(), char_level=True),
@@ -68,21 +69,23 @@ def choose_the_most_suitable_candidates(candidates, surnames, team_numbers):
         other_cand = []
         other_cand_nums = []
         for k, other_surname in enumerate(surnames):
-            if " " + text_part.lower() + " " in " " + other_surname.lower() + " ":
+            if text_part.lower() in other_surname.lower():
                 other_cand.append(other_surname)
                 other_cand_nums.append(team_numbers[k])
 
-        if len(other_cand) == 1:
+        if len(other_cand) in [1, 0]:
             probe_surnames_scores.append([best_surname, min_cer])
             continue
 
-        min_cer = 1000
         if j - 1 >= 0 and len(candidates) > j + 1:
-            print(other_cand, candidates[j - 1] + " " + candidates[j] + " " + candidates[j + 1])
-        if len(candidates) > j + 1:
+            print(other_cand, candidates[j - 1] + " " + candidates[j] + " " + candidates[j + 1], min_cer)
+
+        if len(candidates) > j + 1 and min_cer < 50:
+            min_cer = 1000
             best_surname, min_cer = choose_best_surname(other_cand, candidates[j],
                                                         candidates[j + 1], best_surname, min_cer)
-        if j - 1 >= 0:
+        if j - 1 >= 0 and min_cer < 50:
+            min_cer = 1000
             best_surname, min_cer = choose_best_surname(other_cand, candidates[j - 1],
                                                         candidates[j], best_surname, min_cer)
 
@@ -94,7 +97,6 @@ def choose_the_most_suitable_candidates(candidates, surnames, team_numbers):
         if min_cer > 20 and j - 2 >= 0 and candidates[j - 2].isdigit():
             for num, other_surname in zip(other_cand_nums, other_cand):
                 if num == candidates[j - 2]:
-                    print("Gomes is here")
                     min_cer = 0.1
                     best_surname = other_surname
 
@@ -135,7 +137,8 @@ def upload():
     for repl in range(10):
         text = text.replace(str(repl) + "-", str(repl) + " ")
 
-    candidates = [x.strip(" ") for x in re.sub(r"[^A-Za-z0-9- ]", " ", text).split() if len(x.strip(" ")) > 0]
+    candidates = [x.strip(" ") for x in re.sub(r"[^A-Za-z0-9-' ]", " ", text).split()
+                  if sum(map(lambda y: y.isalpha(), x)) > 0 or x.isdigit()]
     print(candidates)
     surnames = choose_the_most_suitable_candidates(candidates, team_members, team_numbers)
     print(surnames)
@@ -157,7 +160,8 @@ def upload():
     for surname in main_surnames:
         for member in input["team"]:
             if member["full_name"] == surname[0]:
-                ans_surnames["recognized_players"].append(f"{member['id']}, {member['full_name']} ({surname[1]})")
+                ans_surnames["recognized_players"].append(f"{member['id']}, {member['full_name']} "
+                                                          f"({100 if surname[1] >= 40 else surname[1]})")
     print("SCORED DURING", time.time() - t)
     return json.dumps(ans_surnames)
 
